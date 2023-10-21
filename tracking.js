@@ -1,7 +1,7 @@
   var referrer = document.referrer,
     referrer_url = referrer ? new URL(referrer) : '',
     referrer_host = referrer_url ? referrer_url.host : '',
-    referrer_organic = referrer_host.search(/google\.|bing\.|duckduckgo\.|yahoo\.|baidu\.|ecosia\.|aol\./gi) > -1,
+    referrer_organic = referrer_host.search(/google\.|bing\.|duckduckgo\.|yahoo\.|baidu\.|ecosia\.|\.aol\./gi) > -1,
     referrer_fb_ig = referrer_host.search(/facebook\.|instagram\./gi) > -1,
     ignore_referrer = document.location.host == referrer_host,
       
