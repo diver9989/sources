@@ -11,7 +11,7 @@
     utm_term = localStorage.getItem('utm_term'),
     utm_content = localStorage.getItem('utm_content'),
     gclid = localStorage.getItem('gclid'),
-	utm_gclid = localStorage.getItem('utm_gclid'),
+    utm_gclid = localStorage.getItem('utm_gclid'),
     
     utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'utm_gclid'],
     utmQuery = decodeURIComponent(window.location.search.substring(1)),
@@ -35,7 +35,7 @@
       localStorage.setItem('utm_content', 'gtm_debug');
       localStorage.setItem('utm_term', 'gtm_debug');
       localStorage.setItem('gclid', 'gtm_debug');
-	  localStorage.setItem('utm_gclid', 'gtm_debug');
+      localStorage.setItem('utm_gclid', 'gtm_debug');
     } else if (utmQuery.search(/^utm_|&utm_/g) > -1 || utmQuery.search('gclid=') > -1) {           //utms
       utmParams.forEach(function(param) {
         var pValue = getUTMValue(param);
@@ -57,7 +57,7 @@
       localStorage.setItem('utm_content', '(none)');
       localStorage.setItem('utm_term', '(none)');
       localStorage.setItem('gclid', '(none)');
-	  localStorage.setItem('utm_gclid', '(none)');
+      localStorage.setItem('utm_gclid', '(none)');
     } else if (referrer_fb_ig) {                                                  //fb ig subdomains
       var parts = referrer_host.split('.');
       var domain = parts[parts.length - 2] + '.' + parts[parts.length - 1]
@@ -67,7 +67,7 @@
       localStorage.setItem('utm_content', '(none)');
       localStorage.setItem('utm_term', '(none)');
       localStorage.setItem('gclid', '(none)');
-	  localStorage.setItem('utm_gclid', '(none)');
+      localStorage.setItem('utm_gclid', '(none)');
     } else if (referrer) {                                                       //other referrers
       localStorage.setItem('utm_source', referrer_host.replace('www.', ''));
       localStorage.setItem('utm_medium', 'referral');
@@ -75,7 +75,7 @@
       localStorage.setItem('utm_content', '(none)');
       localStorage.setItem('utm_term', '(none)');
       localStorage.setItem('gclid', '(none)');
-	  localStorage.setItem('utm_gclid', '(none)');
+      localStorage.setItem('utm_gclid', '(none)');
     } else {                                                                     //last non direct or direct
       localStorage.setItem('utm_source', utm_source || '(direct)');
       localStorage.setItem('utm_medium', utm_medium || '(none)');
@@ -83,6 +83,6 @@
       localStorage.setItem('utm_content', utm_content || '(none)');
       localStorage.setItem('utm_term', utm_term || '(none)');
       localStorage.setItem('gclid', gclid || '(none)');
-	  localStorage.setItem('utm_gclid', utm_gclid || '(none)');
+      localStorage.setItem('utm_gclid', utm_gclid || '(none)');
     };
   };
